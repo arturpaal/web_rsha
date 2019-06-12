@@ -1,0 +1,12 @@
+#!/bin/bash
+# Programm, mis prindib kuup2eva ja kellaaja ja salvestab vajalikud andmed faili sisse.
+Kuu=`date | awk -F" " ' { print $2 }'`;
+Kuup2ev=`date | awk -F" " '{ print $2}'`;
+P2ev=`date | awk -F" " '{ print $1 }'`;
+Kellaaeg=`date | awk - F" " ' { print $4 }'`;
+Riik=`date | awk -F" " ' { print $5 }'`;
+Aasta=`date | awk -F" " ' { print $6 }'`;
+Number=`date | awk -F" " ' { print $4 }' | awk -F: ' { print $2 }'`;
+# echo k2sk peab olema yhe reaga
+touch /tmp/proov_cron${Number}.txt
+echo "T2nane kuup2ev on ${Kuu} ${Kuup2ev} ${Aasta}. Kell on ${Kellaaeg}. See on ${Riik} aeg." >> /tmp/proov_cron${Number}.txt
